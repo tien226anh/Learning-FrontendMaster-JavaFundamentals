@@ -2,9 +2,9 @@ package objects;
 
 public class Rectangle {
 
-    private int sides = 4;
-    private double length;
-    private double width;
+    protected double sides = 4;
+    protected double length;
+    protected double width;
 
     public Rectangle() {
         this.length = 0;
@@ -14,6 +14,10 @@ public class Rectangle {
     public Rectangle(double length, double width) {
         this.length = length;
         this.width = width;
+    }
+
+    public void print() {
+        System.out.println("I am a rectangle");
     }
 
     public double calculatePerimeter() {
@@ -40,7 +44,7 @@ public class Rectangle {
         this.width = width;
     }
 
-    public int getSides() {
+    public double getSides() {
         return sides;
     }
 

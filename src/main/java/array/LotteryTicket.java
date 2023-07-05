@@ -19,18 +19,27 @@ public class LotteryTicket {
         for (int number : array) {
             System.out.print(number + " | ");
         }
+
+        //Another way to loop through array
+//        for (int i = 0; i < array.length; i++) {
+//            System.out.println(array[i] + " | ");
+//        }
     }
 
     public static int[] generateTicket() {
         int[] ticket = new int[LENGTH];
         Random random = new Random();
+
         for (int i = 0; i < LENGTH; i++) {
             int randomNumber;
+
             do {
-                randomNumber = random.nextInt(1, MAX_TICKET_NUM);
+                randomNumber = random.nextInt(MAX_TICKET_NUM) + 1;
             } while (search(ticket, randomNumber));
+
             ticket[i] = randomNumber;
         }
+
         return ticket;
     }
 
